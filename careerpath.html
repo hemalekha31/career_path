@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont {
+            border: 1px solid gray;
+            box-shadow: 3px 2px 3px 2px gray;
+            width: 500px;
+            margin-left: 30%;
+            margin-top: 50px;
+            height: 500px;
+
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        label {
+            margin-left: 100px;
+            font-size: 25px;
+        }
+
+        select {
+            border: 0;
+            background-color: transparent;
+            margin-left: 150px;
+            text-decoration: none;
+            margin-top: 50px;
+            font-size: 15px;
+        }
+
+        button {
+            cursor: pointer;
+            border: 0;
+            padding: 10px;
+            margin-left: 160px;
+            background-color: green;
+            color: white;
+            border-radius: 15px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        button:hover {
+            background-color: rgb(7, 90, 7);
+        }
+
+        #result {
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+            padding: 40px;
+            margin: 20px;
+            margin-top: 0;
+            margin-bottom: 30px;
+            border-left: 6px solid green;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <h1>Career Path suggestion tool</h1>
+        <label for="skill">Choose ur Main skill or interest</label> &nbsp; <br>
+        <select id="skill">
+            <option value="front-end">Front-End Design</option>
+            <option value="backend">Backend development</option>
+            <option value="datahand">Data Handling</option>
+            <option value="ai">AI & Machine Learning</option>
+            <option value="it">IT Support</option>
+        </select> <br> <br>
+        <button onclick="path()">Get Career suggestion</button>
+        <br><br><br>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function path() {
+            let skill = document.getElementById("skill").value;
+            if (skill === "front-end") {
+                document.getElementById("result").innerHTML = "UI/UX Designer or Frontend Developer"
+            }
+            else if (skill === "backend") {
+                document.getElementById("result").innerHTML = "Backend Developer or DevOps Engineer"
+            }
+            else if (skill === "datahand") {
+                document.getElementById("result").innerHTML = "Data Analyst or Database Administrator"
+            }
+            else if (skill === "ai") {
+                document.getElementById("result").innerHTML = "AI/ML Engineer or Data Scientist"
+            }
+            else if (skill === "it") {
+                document.getElementById("result").innerHTML = "System Administrator or Support Specialist"
+            }
+            else {
+                document.getElementById("result").innerHTML = "Please select a valid skill."
+            }
+        }
+    </script>
+</body>
+
+</html>
